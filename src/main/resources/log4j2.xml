@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+
+<Configuration monitorInterval="0">
+
+    <Properties>
+        <Property name="log-path">${bundle:application:applog.path}</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%-7d{yyyy-MM-dd-HH:mm:ss:SSS} [%-5p] [%C] %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <File name="App-File-Appender" fileName="${log-path}/validator.log">
+            <PatternLayout>
+                <pattern>%-7d{yyyy-MM-dd-HH:mm:ss:SSS} [%-5p] [%C] %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="App-File-Appender"/>
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
