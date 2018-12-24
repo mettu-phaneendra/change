@@ -12,7 +12,8 @@ Write a password validation service, meant to be configurable via IoC (using dep
 
 # Instructions
 
-1) mvn clean install -- test cases will run as part of this build.
+1) mvn clean install 
+   -- test cases will run as part of this build.
 2) this is a spring boot project, so a jar will be build with an embedded tomcat server.
 2) cd target (expecting no errors)
 3) java -jar target/validator-1.0.0.jar
