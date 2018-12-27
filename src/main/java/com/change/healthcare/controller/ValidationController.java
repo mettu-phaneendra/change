@@ -42,6 +42,9 @@ public class ValidationController {
         logger.info("Validate user password");
         Map<String, Object> body = new HashMap<>();
         try {
+            if (null == password || password.isEmpty()) {
+                throw new InvalidInputException("Password validation failed");
+            }
             validationService.validatePassword(password, body);
         } catch (Exception ex) {
             return adminController.handleGeneralException(ex, body);
